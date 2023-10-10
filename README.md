@@ -16,7 +16,7 @@ Edit the Markdown files in the `docs` folder. When you save a file, the output f
 
 ## Contributors
 
-The documentation was written by Nick Fair with some assistance from [Stephen C. Phillips](https://github.com/scp93ch).
+The documentation was written by Nic Fair with some assistance from [Stephen C. Phillips](https://github.com/scp93ch).
 
 ## Licence
 
