@@ -1,0 +1,8 @@
+site_name: Spyderisk System Modeller Documentation
+theme:
+  name: material
+  features:
+    - instant
+    - navigation.expand
+markdown_extensions:
+  - markdown.extensions.attr_list
