@@ -1,0 +1,748 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4%20Risk%20Identification%20pt2%20-%20Validating%20your%20Model/">
+      
+      
+        <link rel="next" href="../6%20Risk%20Analysis%20and%20Evaluation/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Risk Analysis (1) - Spyderisk System Modeller Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#risk-analysis-1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Spyderisk System Modeller Documentation" class="md-header__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spyderisk System Modeller Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Risk Analysis (1)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Spyderisk System Modeller Documentation" class="md-nav__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Spyderisk System Modeller Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reference%20Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Getting%20Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with SSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20Risk%20Identification%20pt1%20-%20Modelling%20your%20System/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (1) - Modelling your System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Risk%20Identification%20pt2%20-%20Validating%20your%20Model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (2) - Validating your Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Risk Analysis (1)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (1)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adjusting-your-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adjusting Your Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adjusting Your Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-ssm-concepts-trustworthiness-threats-consequences-impact-and-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Core SSM Concepts: Trustworthiness, Threats, Consequences, Impact and Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-impact-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Impact Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-existing-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Existing Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20Risk%20Analysis%20and%20Evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (2) and Risk Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%20Risk%20Treatment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Treatment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%20Finishing%20your%20Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Finishing your Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adjusting-your-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adjusting Your Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adjusting Your Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-core-ssm-concepts-trustworthiness-threats-consequences-impact-and-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Core SSM Concepts: Trustworthiness, Threats, Consequences, Impact and Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-impact-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Impact Levels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-existing-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Existing Controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="risk-analysis-1">Risk Analysis (1)</h1>
+<h2 id="adjusting-your-model">Adjusting Your Model</h2>
+<p>Now that the model is correct it is time to refine and adjust the model to accurately reflect the reality of your business context. Because your business context is unique to you, SSM allows you to reflect this in two ways:</p>
+<ul>
+<li>adjusting the <strong>Impact Levels</strong> for the assets in your system</li>
+<li>including any existing security measures, or <strong>controls</strong>, that are in your system already</li>
+</ul>
+<h3 id="the-core-ssm-concepts-trustworthiness-threats-consequences-impact-and-controls">The Core SSM Concepts: Trustworthiness, Threats, Consequences, Impact and Controls</h3>
+<p>It is worth taking a moment to understand some of the core concepts and terminology used by the SSM tool, as it will help you to understand what you are seeing/doing and why you are seeing/doing it. The relationships between these concepts are summarised in the diagram below:</p>
+<p><img alt="SSM Core Model" src="../../images/CoreModel.png" /></p>
+<p>In accordance with ISO 27005 standards, the SSM tool models assets in terms of Trustworthiness, Threats, Consequences, Impact and Controls.
+The <strong>Trustworthiness</strong> of an asset is how much that asset can be relied upon to function correctly. Each asset is automatically assigned a various Trustworthiness levels and at this stage there is no need to change the default settings.</p>
+<p>SSM also automatically identifies the <strong>Primary</strong> and <strong>Secondary Threats</strong> and their <strong>Consequences</strong> in relation to an individual asset.
+Threats cause Consequences at Assets which themselves almost always undermine a Trustworthiness Attribute at the Asset. A Secondary Threat is the inevitable consequence of another Threat (so loss of availability of a host would inevitably cause loss of availability of any data it stored) and so is directly "caused by" a Consequence. A Primary Threat is an event (accidental, or more often deliberate) and made more likely by a lowered Trustworthiness Attribute. In this way a complex interlinked chain of Threat-Consequence-Threat is modelled demonstrating how an attacker (or just accidental or inevitable problems) propagate through the system.</p>
+<p>Next, if a Threat and its Consequences happen, there will be a negative <strong>Impact</strong> on your business of varying degree. Consequently, SSM will automatically assign a default Impact Level for each asset in your model.</p>
+<p>SSM will also recommend a range of security <strong>Controls</strong> to mitigate against the threats identified.</p>
+<p>The Consequences of a Threat will also have an <strong>Impact</strong> on your business. In this example, losing customer data is likely to negatively impact your business in important ways, for example, through the loss of reputation and therefore the loss of future (and existing) customers. As a result, SSM will suggest a range of security measures, known as <strong>Controls</strong>, that you can implement to reduce the likelihood or even block the Threats from occuring. In some cases though, the introduction of a Control can also trigger another Threat. For example, introducing password protection on the customer data introduces the Threat that the Sales Manager may forget her password, with the Consequence that she may suffer a <em>Loss of Availability</em> of that data (and any potential secondary threats that may cause).</p>
+<p>In short, SSM conceptualises cyersecurity risk in the following way:</p>
+<ul>
+<li>Assets have a set of Trustworthiness ratings (how reliable they are in various ways), but can also be subject to Threats (Primary or Secondary)</li>
+<li>Threats have Consequences (and Consequences can also cause more Threats)</li>
+<li>Consequences have a negative Impact on a business of varying degrees (very low to very high)</li>
+<li>Threats can be mitigated by implementing security Controls (but some controls can cause more Threats and Consequences)</li>
+</ul>
+<h3 id="setting-impact-levels">Setting Impact Levels</h3>
+<p>Although SSM simplifies and speeds up the risk analysis process by automatically assigning default Trustworthiness and Impact levels to the assets in your model, in accordance with ISO 27005 standards, you should nevertheless identify the <strong>Primary</strong> assets in your model: critical data and critical business processes. some of your <strong>Data</strong> assets may be critical to the business and the Impact levels for the various Consequences on those data assets should be carefully chosen. The software does not model business processes but often these are best represented by an <strong>Application Process</strong>. Again, the critical ones should be examined carefully and their Impact levels set.</p>
+<p>The other assets in the model will (most probably) have the correct default settings. It is not necessary to consider knock-on effects as this is done automatically. For instance, if the availability of a dataset is critical to your business then the Impact level for "Loss of Availability" on that data asset should be elevated. It is not necessary though to elevate the "Loss of Availability" Impact level of the <strong>Host</strong> that hosts the data as this will automatically be taken into account.</p>
+<p>To set the <strong>Impact Levels</strong> for a Data asset you will need to click on the asset in the model and then choose the Impact Level for each Consequence.
+To do this:</p>
+<ul>
+<li>Firstly, click on any asset. The asset will now have a green border. (<strong>NOTE: click anywhere on the canvas to deselect an asset</strong>). The Model Explorer Panel on the right of the screen will change to display the Asset Panel. The <strong>Consequences and their Impact</strong> tab will automatically be displayed, along with the number of possible Consequences attached to this asset shown in brackets. In this example the <strong>Customer Data</strong> asset is selected and has six Consequences:</li>
+</ul>
+<p><img alt="A Selected Asset" src="../../images/image%20%2830%29.png" /></p>
+<ul>
+<li>Secondly, click on an individual Consequence to open the <strong>Consequences Explorer panel</strong> where considerable detail is provided:</li>
+</ul>
+<p><img alt="Consequence Explorer panel" src="../../images/image%20%2831%29.png" /></p>
+<ul>
+<li>Thirdly, adjust the <strong>Impact Level</strong> in either the Consequence Explorer panel or under the Consequences and their Impact tab in the Customer data panel (it doesn't matter which) to accurately reflect the Impact on your business in your particular context. There are five levels to choose from as follows:</li>
+</ul>
+<p><img alt="Impact Levels" src="../../images/image%20%2829%29.png" /></p>
+<p>In this example, the Loss of Confidentiality of Customer Data will have significant effects on your business (potential for fines, compenstation payments, loss of reputation and trust, loss of customers...etc). However, once quickly addressed, it need not be fatal to your business. Therefore, an Impact Level of <strong>High</strong> is most appropriate:</p>
+<p><img alt="Consequence High Level" src="../../images/image%20%2832%29.png" /></p>
+<ul>
+<li>Finally, repeat the process with the remaining Consequences for the asset.</li>
+</ul>
+<p><img alt="All Consequences Set" src="../../images/image%20%2833%29.png" /></p>
+<p><strong>NOTE: As the Risk Analyst you know your system and your business better than anyone else, so it is your decision concerning what Impact Level to choose for each Consequence</strong></p>
+<p>Now, you will have adjusted your model to most accurately reflect the realities of your business context in relation to the Impact of the Consequences of Threats for your most important business assets.</p>
+<h3 id="adding-existing-controls">Adding Existing Controls</h3>
+<p>The next thing to do is to model any existing security Controls that you may already have in your system. Again, this is an important step as it will greatly improve the accuracy of the risk analysis and the recommended Controls. It is done using the <strong>Controls</strong> tab on the <strong>Model Summary</strong> panel:</p>
+<p><img alt="Controls Tab" src="../../images/image__33a_.PNG" /></p>
+<p>Listed under the Controls tab are a wide range of possible security controls that may be in place already relating to technical, physical and human aspects of your system. Clicking on an individual control will open the <strong>Control Explorer</strong> where a description of the Control can be found as well as the Assets to which that Control can be applied. A <em>traffic light</em> system of red, orange and green 'lights' can be seen next to each applicable node:</p>
+<p><img alt="Control Explorer" src="../../images/image__33b_.PNG" /></p>
+<ul>
+<li>A red light = Control <strong>not</strong> implemented</li>
+<li>An orange light = Control is planned to be implemented (but is not yet in place)</li>
+<li>A green light = Control <strong>is</strong> already implemented</li>
+</ul>
+<p>SSM defaults to no Controls already existing (all red lights). Choosing the orange light will cause the SSM to take it into account in the risk level calculation (as if the Control is in place) but the fact that it is not implemented yet will be highlighted in the reporting.</p>
+<p><strong>NOTE: As the Risk Analyst you should review the default setting for each Control and each Asset it impacts at this stage using your knowledge of your system</strong></p>
+<p>In our example system <strong>AntiMalware</strong> software is already installed on all the company's devices, so we will need to change all three of the assets to a green light:</p>
+<p><img alt="Control Explorer AntiMalware" src="../../images/image__33c_.PNG" /></p>
+<p>The available Controls are not only software-based, but also relate to physical security Controls (e.g. Biometric locks on Server rooms, etc) and to human security Controls (e.g. mandatory security training programmes). In the example system, all staff have undergone <strong>Basic Security Training</strong>, so we will add this to the relevant human Assets in the model now:</p>
+<p><img alt="Control Explorer BasicSecurityTraining" src="../../images/image__33d_.PNG" /></p>
+<p>Note that the Customer is not an asset under our control in this scenario so we should not asssert that they have any training.</p>
+<p>Repeat this process until you are satisfied that the existing Controls within your system have been successfully modelled.</p>
+<h3 id="summary">Summary</h3>
+<p>We have understood the <strong>core concepts of Trustworthiness, Threats, Consequences, Impact and Controls</strong> on which the SSM tool is built, and explored how to refine and adjust the model of your system to most accurately reflect reality. This is done by adjusting the <strong>Impact Levels</strong> for the most important of your Primary Assets (data) and by modelling all existing security <strong>Controls</strong> on all Assets. Your model is now ready for the automated risk level calculation process.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant", "navigation.expand"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

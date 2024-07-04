@@ -1,0 +1,732 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Reference%20Guide/">
+      
+      
+        <link rel="next" href="../2%20Getting%20Started/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Overview - Spyderisk System Modeller Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Spyderisk System Modeller Documentation" class="md-header__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spyderisk System Modeller Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Spyderisk System Modeller Documentation" class="md-nav__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Spyderisk System Modeller Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reference%20Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Brief...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In Brief...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Identification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Treatment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-acceptance-communication-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Acceptance, Communication &amp; Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Getting%20Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with SSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20Risk%20Identification%20pt1%20-%20Modelling%20your%20System/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (1) - Modelling your System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Risk%20Identification%20pt2%20-%20Validating%20your%20Model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (2) - Validating your Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20Risk%20Analysis%20-%20Impact%20and%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20Risk%20Analysis%20and%20Evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (2) and Risk Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%20Risk%20Treatment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Treatment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%20Finishing%20your%20Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Finishing your Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in-brief" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Brief...
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In Brief...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risk-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Identification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-treatment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Treatment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-acceptance-communication-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Risk Acceptance, Communication &amp; Monitoring
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="overview">Overview</h1>
+<p>The Spyderisk System Modeller (SSM) allows you to create a high level model of your system, to detect potential security threats, to assess the level of risk from each threat, and to find out and test what security controls could be used to reduce the level of risk in your system.
+SSM allows you to model your current system and identify cybersecurity and compliance risks and the appropriate mitigations. It also allows you to model the reduction in risk resulting from the mitigations you will introduce in the future. In the same way, you can also model future changes to your system (e.g. adding a new cloud server, new database, new software applications, new sensors to a factory line, new staff, etc, to your system) and analyse how your cybersecurity and compliance risks will be changed as a result of that addition and what new mitigations you may need to implement. In other words, it is an iterative process.</p>
+<p>To make best use of the SSM tool we suggest that you consider the <strong>modelling and risk assessment process</strong> as a series of stages that align with the ISO 27005 standard for cybersecurity risk assessment:</p>
+<ol>
+<li>Getting started with SSM</li>
+<li>Risk Identification - modelling your system (assets)</li>
+<li>Risk Identification - completing your model (error correction)</li>
+<li>Risk Analysis - setting impact levels, modelling existing controls</li>
+<li>Risk Analysis - calculating the likelihood and risk levels</li>
+<li>Risk Evaluation - evaluating threats (prioritising threats to treat and/or accept)</li>
+<li>Risk Treatment - introducing controls / control strategies</li>
+<li>Risk Acceptance, Communication &amp; Monitoring - end/start of iterative process</li>
+</ol>
+<p><img alt="A summary of ISO 27005 Risk Assessment process and its relation to the SSM" src="../../images/ISO27005.png" /></p>
+<p><strong>The tutorials available via the <em>Help</em> button will assist you with each of these stages.</strong></p>
+<h2 id="in-brief">In Brief...</h2>
+<h3 id="risk-identification">Risk Identification</h3>
+<p>Risk Identification encompasses the identification of assets, existing controls, vulnerabiliies, threats and consequences. ISO27005 describes an asset as <em>"anything that has value to an organisation and which therefore requires protection"</em> - these valuable assets are known as <strong>Primary Assets</strong>. So, the first stage of using SSM is to construct the model of your system by placing assets (e.g. servers, data, people, buildings…etc) onto the modelling canvas and creating links (relationships) between them. It will also be necessary to model many of the <strong>Supporting Assets</strong> as well. A simple, partially completed model can be seen below.</p>
+<p><img alt="A Basic SSM Model" src="../../images/image%20%281%29.png" /></p>
+<p>Next the model is automatically validated by SSM. The result of the validation is that any modelling errors will be identified and detaled information is provided to correct those errors. The <strong>Possible Modelling Errors</strong> panel can be seen below.</p>
+<p><img alt="Possible Modelling Errors Panel" src="../../images/image__1a_.PNG" /></p>
+<p>ISO27005 states that <em>“Asset identification should be performed at a suitable level of detail that provides sufficient information for the risk assessment”</em>. So the final part of Risk Identification is to adjust the model to accurately represent your system by adding in the existing cybersecurity controls that you already have in place. Existing controls can be described in the model with the <strong>Control</strong> class, using the <em>'in place'</em> attribute. Control types in our model include physical security (locks on doors), organisational measures (staff screening, training, policies), service security (TLS, AuthN, passwords, etc), data security, resource management and more. One or more Controls combine to form a Control Strategy. In addition, you should also tweak the Trustworthiness and Consequences/Impact levels for each asset to felect your specific business (or other) context. The Trustworthiness and Consequence/Impact levels for the Administrator asset can be seen below.</p>
+<p><img alt="Administrator Asset Levels" src="../../images/image__1b_.PNG" /></p>
+<h3 id="risk-analysis">Risk Analysis</h3>
+<p>Once your system has been modelled with sufficient detail, the next phase is to analyse the risk to your system. The Network Knowledgebase underpinning SSM contains a catalogue of generic threats along with the information necessary to identify when and where each type of threat is present in the System Model. In this way, <strong>SSM automates the process by finding threats and calculating risk levels.</strong> It also provides considerable information to support the second and third of these steps (Risk Analysis and Risk Evaluation). SSM enables you to see and understand the relationships between assets and threats as well as comprehend the <strong>Consequences</strong> to your system by knowing the <strong>Likelihood and Impact levels</strong> associated with all threats. SSM will also enable you to identify and understand any <strong>GDPR compliance issues</strong>, and their consequences, that you may have concerning the data flows within your system. These will be displayed to you in various panels on the right hand side of the screen and can be fully explored in considerable depth.</p>
+<p><img alt="SSM Panels" src="../../images/ssm_panels.png" /></p>
+<h3 id="risk-evaluation">Risk Evaluation</h3>
+<p>Once the various risks have been automatically analysed, you next evaluate the risks with their levels and determine which can be accepted as they are, and which need to be treated (in a prioritised list). SSM permits a user to mark a Threat as <em>'accepted'</em> (with an explanation), which is an evaluation you will need to make. We generally advise that you prioritise the <strong>highest risk Consequences</strong> (which are clearly shown in the interface) as a starting point.</p>
+<p><img alt="SSM Threat Panels" src="../../images/consequences.png" /></p>
+<h3 id="risk-treatment">Risk Treatment</h3>
+<p>Beyond enabling you to identify, analyse and evaluate the risks to your system, SSM also suggests a vast <strong>range of controls</strong> that you might want to implement in order to reduce those risks. The options are to <strong>modify, retain, avoid or share</strong> each risk. SSM provides extensive help in proposing and applying controls to modify risks (by identifying the root cause(s) of Consequences and letting the user explore cause and effect paths through the system). SSM allows you to easily apply those controls, re-run the risk assessment, re-model if required, and clearly visualise the effect on the Consequences (Likelihood and Impact levels) of each threat and its associated control(s). SSM also allows you to produce reports from the data held in the model, including a <strong>risk treatment plan</strong> based on the Controls you have marked as <em>'to do'</em>.</p>
+<p><img alt="SSM Control Panels" src="../../images/controls.png" /></p>
+<h3 id="risk-acceptance-communication-monitoring">Risk Acceptance, Communication &amp; Monitoring</h3>
+<p>Formally this stage is outside the scope of the SSM tool, as they are wider, business activities that form part of an on-going, iterative process.  Importantly though, despite this, the detailed model, the risk treatment plan and the selected controls to implement will support you in your internal budget, resources and implementation discussions, make on-going monitoring simpler, and help the directors reach an informed, collective agreement on an acceptable level of risk versus investment in cybersecurity.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant", "navigation.expand"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
