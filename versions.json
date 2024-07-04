@@ -5,6 +5,14 @@
     "aliases": []
   },
   {
+    "version": "1-automatically-build-and-publish-the-versioned-documentation",
+    "title": "1-automatically-build-and-publish-the-versioned-documentation",
+    "aliases": [
+      "0.2",
+      "alias"
+    ]
+  },
+  {
     "version": "0.1",
     "title": "0.1",
     "aliases": [
