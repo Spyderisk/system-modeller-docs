@@ -1,0 +1,1220 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2%20Getting%20Started/">
+      
+      
+        <link rel="next" href="../4%20Risk%20Identification%20pt2%20-%20Validating%20your%20Model/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Risk Identification (1) - Modelling your System - Spyderisk System Modeller Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#risk-identification-1-modelling-your-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Spyderisk System Modeller Documentation" class="md-header__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spyderisk System Modeller Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Risk Identification (1) - Modelling your System
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Spyderisk System Modeller Documentation" class="md-nav__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Spyderisk System Modeller Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reference%20Guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Getting%20Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with SSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Risk Identification (1) - Modelling your System
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (1) - Modelling your System
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Modelling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Modelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-supporting-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary &amp; Supporting Assets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relationships
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-importance-of-databases-processes-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Importance of Databases, Processes &amp; Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associated-humans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associated Humans
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Associated Humans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-modelling-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Layer Modelling Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-internet-of-things-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Internet of Things Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Hosts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Subnets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer-modelling-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Layer Modelling Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Physical Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Physical Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Governance Asset
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Governance Asset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer-modelling-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Layer Modelling Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20Risk%20Identification%20pt2%20-%20Validating%20your%20Model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (2) - Validating your Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20Risk%20Analysis%20-%20Impact%20and%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20Risk%20Analysis%20and%20Evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (2) and Risk Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7%20Risk%20Treatment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Treatment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8%20Finishing%20your%20Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Finishing your Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-modelling" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Modelling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Modelling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary-supporting-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primary &amp; Supporting Assets
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relationships
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-importance-of-databases-processes-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Importance of Databases, Processes &amp; Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#associated-humans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associated Humans
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Associated Humans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-modelling-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Layer Modelling Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensors-and-internet-of-things-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensors and Internet of Things Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Hosts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Additional Hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-subnets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical Subnets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer-modelling-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Layer Modelling Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Physical Layer
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Physical Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spaces
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Governance Asset
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Governance Asset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer-modelling-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Physical Layer Modelling Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="risk-identification-1-modelling-your-system">Risk Identification (1) - Modelling your System</h1>
+<h2 id="general-modelling">General Modelling</h2>
+<p>Once you have opened a new model from the dashboard and accessed it, you will be presented with the <strong>Model Construction Canvas</strong>. This is the empty area of white in the middle of the screen. When you start modelling for the first time it is literally a 'blank canvas'. The canvas is where you will build the model of your system.</p>
+<p><img alt="SSM Modelling Canvas - blank" src="../../images/image%20%287%29.png" /></p>
+<h3 id="assets">Assets</h3>
+<p>Your model consists of the physical objects (including data) that make up your system. These are called <strong>assets</strong> and are represented as nodes in the model. Assets can be found listed in the Asset Palette on the left of the screen, under various 'types' (two of which are expanded in the image below).</p>
+<p><img alt="SSM Asset Panel" src="../../images/image__7a_.PNG" /></p>
+<p>When modelling, it can help to imagine the canvas (and the Assets) as divided into three broad areas:</p>
+<ul>
+<li>The Application Layer (data and processes) – Data, Process</li>
+<li>The Network Layer (sensors, IOT, devices and network connections) - Network Asset</li>
+<li>The Physical Layer (spaces, places, people and jurisdictions) – Governance Asset, Space, Stakeholder</li>
+</ul>
+<p><img alt="SSM Modelling Layers" src="../../images/image%20%287b%29.png" /></p>
+<p>To begin building the model, select the chosen asset from the palette and drag-and-drop it onto the canvas. You can double-click on the asset text to rename the asset.</p>
+<p><strong>Modelling Tip: Immediately renaming assets to names you can easily recognise and understand is a very good idea.</strong>
+<strong>Modelling Tip: It is recommended that you start with Assets in the Application Layer and work down through the Network Layer to the Physical Layer.</strong></p>
+<p>You can click on an asset on the canvas at any time. The selected asset will highlight with a green border. Once selected, a wide range of details about that asset will be displayed in the panel on the right:</p>
+<ul>
+<li>Asset Details and Population.</li>
+<li>Additional Properties (used when integrating with other tools)</li>
+<li>Trustworthiness (i.e. how much various aspects of this asset can be relied upon)</li>
+<li>Inferred Assets (additional assets inferred by the software which are located here after validation)</li>
+<li>Incoming relations</li>
+<li>Outgoing relations</li>
+<li>Controls (empty until the model has been validated)</li>
+<li>Control Strategies (empty until the model has been validated)</li>
+<li>Consequences and their Impact (empty until the model has been validated)</li>
+<li>Threats (empty until the model has been validated)</li>
+</ul>
+<p><img alt="Highlighted Asset and Asset Summary" src="../../images/image%20%288%29.png" /></p>
+<p>Assets can be deselected by clicking anywhere on the canvas. They can be deleted at any point by clicking on the red dustbin icon on the asset, which appears on hover-over. All relationships from/to that asset will also be automatically deleted.</p>
+<h4 id="primary-supporting-assets">Primary &amp; Supporting Assets</h4>
+<p>ISO 27005 suggests that there are <strong>primary assets</strong> and <strong>supporting assets</strong>. Primary assets are in some sense critical to the business and fall into two general categories:</p>
+<ol>
+<li>business processes and activities</li>
+<li>information</li>
+</ol>
+<p>Later in these tutorials you will discover how to identify the subset of these primary asset types and how to assign some value (importance) to them through adjusting the default Impact levels for Consequences arising from threats to this asset (see Risk Identification pt.3 - Adjusting your Model).</p>
+<h3 id="relationships">Relationships</h3>
+<p>Once you have two or more assets on the canvas you need to connect them together with a <strong>relationship</strong>. Relationships are represented as links in the network model you are constructing.</p>
+<p><strong>Modelling Tip: It does not matter which asset you start with when connecting two assets.</strong></p>
+<p>To connect two assets, hover over the first asset and click the green cross in the top left corner.</p>
+<p><img alt="Relationship Button" src="../../images/image%20%289%29.png" /></p>
+<p>Next, permitted assets will display a blue tick in the top left corner. If this tick is not present it is not possible to connect those two assets. Click on the permitted destination asset that you want to create the relationship with. At this stage one of two possibilities will occur:</p>
+<ol>
+<li>A connecting arrow with a relationship label will be automatically drawn on the canvas - <em>NOTE:</em> this only happens when there is only 1 possible relationship between those assets. <em>NOTE:</em> the arrow indicates the direction of the relationship.</li>
+<li>The <strong>Select Relation</strong> dialogue box will open and you will choose the correct relationship from the list presented. Hovering over a relationship option will display a description of that relationship to help you choose correctly (see image below).</li>
+</ol>
+<p><img alt="Select Relation Dialogue Box" src="../../images/image%20%2810%29.png" /></p>
+<p>Once the relationship is automatically or manually chosen, it will be drawn on the canvas.</p>
+<p><img alt="Two linked Assets" src="../../images/image%20%2811%29.png" /></p>
+<p>Right clicking on any relationship arrow or label will bring up information and options for that relationship.</p>
+<p><img alt="Right Click Relationship Info &amp; Options" src="../../images/image%20%2812%29.png" /></p>
+<p><strong>To demonstrate SSM in action, we will now start building a simple example model. Of course, your model is likely to be considerably more complex and much larger.</strong></p>
+<h2 id="application-layer">Application Layer</h2>
+<p>The Application Layer consists of Data assets and Process assets, both of which can have Humans associated with them.</p>
+<h3 id="the-importance-of-databases-processes-data">The Importance of Databases, Processes &amp; Data</h3>
+<p>There are a number of commonly associated assets (and the relationships between them). Normally, these are self-evident, or will be detailed in the modelling errors after model validation (enabling you to correct them easily - see Risk Identification pt.2 - Completeing your Model).</p>
+<p>However, lets explore one common example here.</p>
+<p><img alt="Common Asset-Relationship Path" src="../../images/image__13_.PNG" /></p>
+<p><em>NOTE:</em> the server is a hardware asset (and is NOT in the Application Layer).</p>
+<p>Running on the server are two <strong>application processes</strong>:</p>
+<ul>
+<li>the <em>database</em> (a specialised application process with its own asset icon 'DB')</li>
+<li>the <em>web server</em> (a generic, renamed 'application process' icon)</li>
+</ul>
+<p>All generic application processes are assets which execute software processes in real-time (i.e. in memory, running now).
+Database assets are specialised applications for serving data (i.e. a MySQL process).
+<em>Neither</em> of these application processes are the data itself. This needs to be represented by (one of) the data icon(s) as a separate node in the system.</p>
+<p>Hence a very common asset-relationship path would be <strong>Server-hosts-Database-serves-Data</strong></p>
+<p><strong>Modelling Tip: It is very easy to think that a Database is the actual data - it is NOT, it is the <em>process</em> which serves the data</strong></p>
+<p>Importantly, the relationships between processes and data form the foundation of the ISO 27005 Standards and have therefore been very carefully defined within the SSM Knowledgebase.</p>
+<p>This means there are 7 possible relationships between any process and any data for you to select. Hovering over one of the options displays information about what that relationship specifically involves:</p>
+<ul>
+<li><strong>amends</strong> - the process uses and alters the value of an Instance of Data, and is not blocked if it cannot access the data</li>
+<li><strong>apends</strong> - the process creates new Instances of Data, adding them to a collection but not overwriting existing instances. This is a type of update operation, but the Process does not need access to the previious values.</li>
+<li><strong>creates</strong> - the process creates the value of the Data, and does not require access to it after that</li>
+<li><strong>reads</strong> - the process uses the Data values without altering them, and is blocked if it cannot access the Data</li>
+<li><strong>receives</strong> - the process uses the Data values without altering them, and is NOT blocked if it cannot access the Data</li>
+<li><strong>serves</strong> - the process provides access to the Data for other processes, but does not make use of the Data for itself</li>
+<li><strong>updates</strong> - the process uses and alters the value of the Data, and is blocked if it cannot access the Data</li>
+</ul>
+<p><img alt="7 Process-Data Relationships" src="../../images/image%20%2815%29.png" /></p>
+<p><strong>Modelling Tip: It is very important that you understand and correctly model the relationships between the processes and the data in your system</strong></p>
+<h3 id="associated-humans">Associated Humans</h3>
+<p>Human interaction with data and processes is a critical point-of-weakness in the security of any system as humans can be phished, make mistakes, misunderstand or deliberately sabotage systems – intentionally or accidentally. So humans in the system must be modelled by the same drag-n-drop method used for the other assets.</p>
+<p><strong>Modelling Tip: Human assets represent <em>user roles</em> in a system (not specific individuals).</strong></p>
+<p>There are 5 different relationships a Human can have with Data:</p>
+<ul>
+<li><strong>amends</strong> - the relationship between an interactive process user and data they <em>enter, review and update</em> by using the process</li>
+<li><strong>enters</strong> - the relationship between an interactive process user and data they <em>enter</em> by using the process</li>
+<li><strong>views</strong> - the relationship between an interactive process user and data they <em>view</em> by using the process</li>
+<li><strong>hasController</strong> - the stakeholder is legally responsible for use of the Data to both the data subject and the data regulator (GDPR compliance)</li>
+<li><strong>relatesTo</strong> - a relationship between a personal device (inc. IoT devices) and data and a Human user. Data on the device may be Personally Identifiable Information (PII) related to that user</li>
+</ul>
+<p><img alt="Human-Data Relationships" src="../../images/image%20%2816%29.png" /></p>
+<p>There are also 3 different relationships a Human can have with a Process:</p>
+<ul>
+<li><strong>interactsWith</strong> - the human is an interactive user of the related Host or Process</li>
+<li><strong>manages</strong> - the human manages (administers and configures) the related Host or Process, and the otherwise unmanaged processes running on it, or otherwise unmanaged hosts within a Space</li>
+<li><strong>operates</strong> - the stakeholder is the legal entity responsible for managing the Host, Process or DataCentre</li>
+</ul>
+<p><img alt="Human-Process Relationships" src="../../images/image%20%2818%29.png" /></p>
+<h4 id="application-layer-modelling-summary">Application Layer Modelling Summary</h4>
+<p>In the example model we are building, the Sales Manager also interacts with the Customer Data, but not directly, rather through a series of processes. She does by interacting with a Web Browser process which uses the Web Server to update the Customer Data, thereby also using the Database.</p>
+<p><img alt="Sales Manager added to Model" src="../../images/image%20%2817%29.png" /></p>
+<p>The Application Layer for our simple example model is now complete (remember that Server 1 is NOT in this layer). In other words, we have added the <strong>data, process and associated human assets</strong> to the canvas (in the appropriate place) and linked them all with the right relationships.</p>
+<h2 id="network-layer">Network Layer</h2>
+<p>Next we move to the Network Layer which consists of <strong>Network Components, Devices (inc. IoT devices) and Sensors</strong> - in otherwords the physical network through which data is generated, stored, communicated, and used.
+This part of the system consists of:</p>
+<ul>
+<li><strong>Hosts</strong> - devices (physical and virtual), sensors (including IoT), servers, networking infrastructure (routers). <em>NOTE:</em> We have already seen the first of these modelled - the Server 1 asset and its relationships to the Processes and Data in the Application Layer.</li>
+<li><strong>LogicalSubnets</strong> - the sub-networks in the system that enable communication between devices (e.g. LANs, WiFi networks, the Internet)</li>
+</ul>
+<h3 id="hosts">Hosts</h3>
+<p>Hosts are the physical (and sometimes virtual) devices on which data is permanently stored and processes are run. Hosts are closely related to the Application Layer because they represent the means to store and exchange data and run processes. This is modelled using two relationships:</p>
+<ul>
+<li><strong>hosts</strong> - a Process running on a Host</li>
+<li><strong>stores</strong> - a persistent copy of Data held on a Host</li>
+</ul>
+<p>In our example model, Server 1 <strong>hosts</strong> the Database and the Web Server processes and <strong>stores</strong> the Data. This is not the only Host in our example system, but we will return to the others after learning about LogicalSubnets...</p>
+<h3 id="sensors-and-internet-of-things-devices">Sensors and Internet of Things Devices</h3>
+<p>IoT assets represent a device with its own embedded Process and Data, so it can be used by Processes in the Application Layer, but also be <em>connectedTo</em> subnets in the Network Layer. The IoT device itself may be a Sensor which creates and serves measurement Data so other Processes can access it, or an Actuator which serves control input Data so other Processes can alter it.</p>
+<p>IoT devices can be thought of as part of the Application Layer, only with a built-in ability to connect to networks. However, the reason IoT assets are modelled in the Network Layer is that they are most frequently physical objects (devices), and to model them as such seems less confusing.</p>
+<p>In our example there are no IoT or sensors in the system, but in a different context, such as manufacturing business, there are likely to be many factory-floor / assembly line sensors and other types of monitors or IoT devices present. You can model a range of Sensor, Smartwatch and Health Sensor (e.g. wearables such as FitBits...etc) assets using the icons in the <strong>Host Palette</strong>, rename them as appropriate, and link them up in the Network Layer as usual.</p>
+<p><img alt="Sensor Icons" src="../../images/image%20%2820%29.png" /></p>
+<h3 id="additional-hosts">Additional Hosts</h3>
+<h4 id="logical-subnets">Logical Subnets</h4>
+<p>Logical Subnets are the sub-networks which are present in your system, such as <strong>WiFi networks</strong> and <strong>Local Area Networks</strong> (LANs).</p>
+<p>The <strong>Internet</strong> is a special type of LogicalSubnet which represents the global public network. It is treated as one big locally connected segment so that we don’t need to model explicitly its huge scale and complexity. This is represented by the Internet asset icon. There are two main relationships between Hosts and LogicalSubnet components:</p>
+<ul>
+<li><strong>connectedTo</strong> - the Host (or DataCentre) can send and receive messages via this LogicalSubnet component</li>
+<li><strong>providedBy</strong> - the communication enabled by the LogicalSubnet component is provided by this Host (inc. network allocation, address translation for routing ot other subnets, and support for EAP authentication)</li>
+</ul>
+<h4 id="network-layer-modelling-summary">Network Layer Modelling Summary</h4>
+<p>Hence, to finishing building the Network Layer of our example model, we need to add the remaining Hosts and the Logical Subnets by <strong>thinking about the detail</strong> of the Network Layer of the system. LogicalSubnet icons can be found in the <strong>Network Asset</strong> palette.</p>
+<p>Fisrtly, the Sales Manager uses (<em>interactsWith</em>) a Laptop (a Host), which is <em>connectedTo</em> the Wifi network (a LogicalSubnet component) and <em>hosts</em> the Web Browser (a Process).</p>
+<p><img alt="Network Layer 2" src="../../images/image%20%2819%29.png" /></p>
+<p>Secondly, the Wifi is <em>providedBy</em> the Router (a Host), which is also <em>connectedTo</em> the Internet (a public network). The Router also provides a Wired Local Area Network (LAN) which Server 1 (a Host) is <em>connectedTo</em>. So the example model now looks like this:</p>
+<p><img alt="Network Layer 3" src="../../images/image__19a_.PNG" /></p>
+<p>In simple network terms, the Server is wired into the Router in order to access the Internet, while the Laptop accesses the Internet remotely via WiFi, which is also provided by the Router. This consititutes quite a common pattern of assets and relationships in the Network Layer, especially when modelling Internet access.</p>
+<p><strong>Modelling Tip: Whenever/wherever your system is exposed to the Internet your security risks increase considerably, so it is very important to model all Internet connected devices correctly.</strong></p>
+<p>The Network Layer for our simple example model is now complete. In other words, we have added the <strong>hosts, logical subnets and any sensors/IoT devices</strong> to the canvas (in the appropriate place) and linked them all with the right relationships.</p>
+<h2 id="the-physical-layer">The Physical Layer</h2>
+<p>The final area of the canvas to consider is the Physical Layer, which consists of <strong>Spaces, Stakeholders and Governance</strong>. These are the people, places, and location-based laws and regulations which impact your system, which can all be found in the Asset Palette:</p>
+<p><img alt="Physical Layer Assets" src="../../images/image__20a_.PNG" /></p>
+<h3 id="spaces">Spaces</h3>
+<p>The other main way in which your system could be attacked is physically, and if this is considered important, you should model the physical locations of network devices.</p>
+<p>There are four broad types of space:</p>
+<ul>
+<li><strong>PublicSpace</strong>: an open physical space that anyone can access, lacking even a defined boundary so it cannot be patrolled or inspected (e.g. a public street or (more abstractly) a town or country)</li>
+<li><strong>Bounded Space</strong>: a public space with a boundary so it can feasibly be checked or inspected. The boundary may be a physical perimeter (e.g. a public building), or non-physical (e.g. a region within an open space whose boundary is specified on a map). Access to these spaces cannot be restricted</li>
+<li><strong>PrivateSpace</strong>: a bounded physical space where access can be restricted and secured (e.g. a private home, a business premises, a hospital ward, etc)</li>
+<li><strong>DataCentre</strong>: a special type of PrivateSpace (usually a private building) that contains host and network assets that are not modelled explicitly, but is itself connected to other networks, and which is used to support cloud-platform-based virtualised hosts and networks.</li>
+</ul>
+<h3 id="stakeholders">Stakeholders</h3>
+<p>Another huge potential weakness in your system results from the humans in that system. We have already seen that humans can have relationships with data and processes (Application Layer) and with physical hosts (Network Layer), but, along with organisations, they also play an important role in the Physical Layer. Hosts are managed by humans acting in system admin roles, or for personal devices, in a user role. Organisations control access to Private Spaces, and operate DataCentres, Hosts and Processes so, for example, an Organisation is the operator of a DataCentre or Host if the Human managing it works for the Organisation.</p>
+<p><strong>Modelling Tip: SSM will automatically infer as many of these Human or Organisation responsibilities as possible. For example, if a Human manages a Space, SSM will infer they also manage all Hosts within that Space, unless an alternative maanager is explicitly defined.</strong></p>
+<p>There are five main types of Stakeholder:</p>
+<ul>
+<li><strong>Adult</strong>: a legally competent human able to give their informed consent for any process resulting from their participation in the system</li>
+<li><strong>Child</strong>: a human below the age-of-consent</li>
+<li><strong>Human</strong>: an individual who <em>uses / interactsWith</em> or <em>manages</em> assets</li>
+<li><strong>Legal Organisation</strong>: a group of humans working together that has been consituted as a legal entity (e.g. a limited company, a charity, a government...etc)</li>
+<li><strong>Organisation</strong>: a group of humans working together which is not a registered legal entity with similar legal status to an individual (e.g. a loose federation, a social group....etc)</li>
+</ul>
+<h3 id="governance-asset">Governance Asset</h3>
+<p>The final element of the Physical Layer relates to governance (and compliance) risks. The ability to assess GDPR compliance, in particular, is is an additional feature of the SSM tool, and is represented by the <strong>Jurisdiction</strong> asset. It is necessary to model Jurisdictions, particularly if your system includes personal data (such as Customer Name Data) which is subject to GDPR in some countries/regions. Because different countries/regions have differing laws concerning data and IT infrastructure, which can result in compliance threats to your system, it is only necessary to model multiple Jurisdictions if your system crosses multiple Jurisdictions, for example if your system spans the European Union and the United States.</p>
+<h4 id="physical-layer-modelling-summary">Physical Layer Modelling Summary</h4>
+<p>Hence, to finishing building our example model, we need to add the people / organisations relating to the system, and indicate the locations of the Hosts we have already modelled in the Network Layer, as well as include some jurisdiction information.</p>
+<p>In the case of our example model, this means that we need to indicate the location of the Server, the Router and the Sales Manager's Laptop - all of which are permanently kept within the Company's offices. The company offices are a secure, access-controlled, private space.
+<em>NOTE:</em> Clearly, a laptop is a mobile device able to leave the company's offices, but for the sake of simplicity at this stage, we shall imagine that it never goes anywhere outside the secure office complex.
+So now our system model looks like this:</p>
+<p><img alt="Physical Layer Location" src="../../images/image%20%2821%29.png" /></p>
+<p>Next, we need to consider the people involved. The Company Premises is managed by the company Administrator, who works for Company (X), which is a legal entity. Importantly, as we are now modelling the Administrator into the system, we must also include the Hosts with which they interact - in this case, a Workstation (desktop computer), also located in the company offices and connected to the WiFi network.
+Finally, the system we are modelling is within a single country that falls under European Union jurisdiction (in other words is subject to GDPR requirements). Adding these assets means our example model now looks like this:</p>
+<p><img alt="Physical Layer Location 2" src="../../images/image%20%2822%29.png" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this Risk Identification Part 1 tutorial, we have learnt:</p>
+<ul>
+<li>the basic principles of modelling a system using assets and relationships</li>
+<li>the basic division of the canvas into 3 Layers (<em>NOTE:</em> you do NOT have to follow this layout, however, experience has shown us that it can help to do so)</li>
+<li>how to build a simple model of an example system</li>
+</ul>
+<p><img alt="Physical Layer Location 2" src="../../images/image%20%2823%29.png" /></p>
+<p>You are now ready to progress to the next stage of Risk Identification - validating the model - in the following tutorial.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["instant", "navigation.expand"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

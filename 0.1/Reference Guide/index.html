@@ -1,0 +1,1309 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../Tutorials/1%20Overview/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Reference Guide - Spyderisk System Modeller Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Spyderisk System Modeller Documentation" class="md-header__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Spyderisk System Modeller Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Spyderisk System Modeller Documentation" class="md-nav__button md-logo" aria-label="Spyderisk System Modeller Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Spyderisk System Modeller Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reference Guide
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reference Guide
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#asset-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Palette
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asset Palette">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Governance Asset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-possible-modelling-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Possible Modelling Errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Assets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-control-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Control Strategies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-consequences-and-impacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Consequences and Impacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Threats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Compliance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-additional-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Additional Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-trustworthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Trustworthiness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-inferred-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Inferred Assets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-incoming-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Incoming Relations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-outgoing-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Outgoing Relations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-control-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Control Strategies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-consequences-and-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Consequences and Impact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Threats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequence Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threat-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threat Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compliance Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-threat-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compliance Threat Explorer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/1%20Overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/2%20Getting%20Started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started with SSM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/3%20Risk%20Identification%20pt1%20-%20Modelling%20your%20System/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (1) - Modelling your System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/4%20Risk%20Identification%20pt2%20-%20Validating%20your%20Model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Identification (2) - Validating your Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/5%20Risk%20Analysis%20-%20Impact%20and%20Controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/6%20Risk%20Analysis%20and%20Evaluation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Analysis (2) and Risk Evaluation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/7%20Risk%20Treatment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Risk Treatment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tutorials/8%20Finishing%20your%20Session/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Finishing your Session
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#asset-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Palette
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Asset Palette">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#governance-asset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Governance Asset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host" class="md-nav__link">
+    <span class="md-ellipsis">
+      Host
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Space
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stakeholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stakeholder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-possible-modelling-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Possible Modelling Errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Assets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-control-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Control Strategies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-consequences-and-impacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Consequences and Impacts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Threats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Compliance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-additional-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Additional Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-trustworthiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Trustworthiness
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-inferred-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Inferred Assets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-incoming-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Incoming Relations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-outgoing-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Outgoing Relations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Controls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-control-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Control Strategies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-consequences-and-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Consequences and Impact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asset-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asset Threats
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Control Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consequence-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consequence Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#threat-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Threat Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compliance Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compliance-threat-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compliance Threat Explorer
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="reference-guide">Reference Guide</h1>
+<p>Entries can be accessed by clicking the <strong>?</strong> icon at any time.</p>
+<h2 id="asset-palette">Asset Palette</h2>
+<p>Lists the available assets (the ‘objects’ in your system) that can be drag-andn-dropped onto the modelling canvas as nodes in your network.
+Assets can be conceived as being grouped into three broad areas:</p>
+<ol>
+<li>The <strong>Application Layer</strong> (data and processes) – see <em>Data / Process</em></li>
+<li>The <strong>Network Layer</strong> (sensors, IOT, devices and network connections) – see <em>Host / Network Asset</em></li>
+<li>The <strong>Physical Layer</strong> (spaces, places, people and jurisdictions) – see <em>Governance Asset / Space / Stakeholder</em></li>
+</ol>
+<p>The specific Assets depend on the knowledgebase you are using and each one has a tooltip describing it. The assets may include:</p>
+<h3 id="data">Data</h3>
+<ul>
+<li><em>Biometric Data</em>: a data item or set that contains biometric measurements relating to individuals, and is subject to GDPR Article 9</li>
+<li><em>Data</em>: a data item or set that can be stored, transmitted by a host, or processed by a host</li>
+<li><em>Genetic Data</em>: a data item or set that contains genetic information relating to individuals, and is subject to GDPR Article 9</li>
+<li><em>Health Data</em>: a data item or set that contains health information relating to individuals, and is subject to GDPR Article 9</li>
+<li><em>Sensitive Data</em>: a type of data whose compromise has a higher impact than other types of data</li>
+<li><em>Special Category Data</em>: a data item or set which if compromised has a higher impact than other types of data. If this data relates to a human, it is special category data as defined by GDPR Article 9</li>
+</ul>
+<h3 id="governance-asset">Governance Asset</h3>
+<ul>
+<li><em>Jurisdiction</em>: a specific set of regulations that part or all of the system may be subject to (e.g. EU laws such as GDPR, or National laws)</li>
+</ul>
+<h3 id="host">Host</h3>
+<ul>
+<li><em>Controller</em>: a Thing which can affect the physical environment in ways defined by the data sent to it</li>
+<li><em>Notebook</em>: a mobile physical host such as a laptop use to run application processes locally (including client processes for accessing services over a network)</li>
+<li><em>Router</em>: a simple fixed device used to transmit and receive data between locally connected subnets</li>
+<li><em>Sensor</em>: a Thing that can sense its physical environment and produce data to describe it</li>
+<li><em>Server</em>: a fixed physical host  used to run application processes that are accessed remotely over a network</li>
+<li><em>Smartphone</em>: a mobile physical host used to run applications that act as clients for accessing services over a network</li>
+<li><em>Tablet</em>: a mobile physical host used to run applications, some of which run locally, but most act as clients for accessing services over a network</li>
+<li><em>VM</em> (Virtual Machine): a virtualised host provisioned at a data centre, with an allocated fraction of the underlying physical hardware capacity, and able to host arbitrary applications and data</li>
+<li><em>VRouter</em>: a very simple virtual device used to transmit and receive data between different locally connected (possibly virtual) subnets</li>
+<li><em>Workstation</em>: a fixed physical host such as a PC used to run application processes locally (including client processes for accessing services over a network)</li>
+</ul>
+<h3 id="network">Network</h3>
+<ul>
+<li><em>Cluster IP</em>: a subnet implemented by Kubernetes</li>
+<li><em>Internet</em>: represents access and core networks between other subnets (special type of Logical Subnet)</li>
+<li><em>Private Cellular Network</em>: a private mobile phone network</li>
+<li><em>Public Cellular Network</em>: a public mobile phone network</li>
+<li><em>VLAN</em>: a locally connected network in which connections between hosts are provided by another Logical Subnet which carries the VLAN's communications packets</li>
+<li><em>WiFi LAN</em>: a locally connected network that uses radio communication</li>
+<li><em>wired LAN</em>: a locally connected network in which connections between hosts are provided by physical wires</li>
+</ul>
+<h3 id="process">Process</h3>
+<ul>
+<li><em>ApplicationProcess</em>: a generic process with significant complexity unable to run on a specialised device</li>
+<li><em>DB</em> (Database): a process that allows data to be stored and accessed using a well known query language</li>
+<li><em>Email Client</em>: an ESMTP Mail User Agent (MUA) process</li>
+<li><em>Web Client</em>: an HTTP client process used to access online applications and to navigate the Web</li>
+</ul>
+<h3 id="space">Space</h3>
+<ul>
+<li><em>Bounded Space</em>: a public space with a boundary so it can be feasibly checked or inspected</li>
+<li><em>Data Centre</em>: a building or buildings containing physical hosts and networks used to support virtualised hosts and networks</li>
+<li><em>Private Space</em>: a physical space with secure and/or restricted access</li>
+<li><em>Public Space</em>: a physical space that anyone can access without restriction</li>
+</ul>
+<h3 id="stakeholder">Stakeholder</h3>
+<ul>
+<li><em>Adult</em>: a human legally able to provide consent for participation in an IT-based system</li>
+<li><em>Child</em>: a human below the age of legal consent for participation in an IT-based system</li>
+<li><em>Human</em>: a generic individual user role that uses and/or manages assets</li>
+<li><em>Legal Organisation</em>: a group working together in pursuit of goals constituted as a legal entity</li>
+<li><em>Organisation</em>: a group working together in pursuit of goals</li>
+</ul>
+<h2 id="model-details">Model Details</h2>
+<p>Provides a top-level description of the model and provides a link to the Model Report.</p>
+<p><img alt="Placeholder" src="../images/image (52).png" /></p>
+<h2 id="model-possible-modelling-errors">Model Possible Modelling Errors</h2>
+<p>Lists <em>possible</em> modelling errors that should be investigated. It is not always possible to tell if something is an error or not but it is worth looking through the list of possible errors. Clicking on a modelling error opens a panel that explains the error in detail and suggests how to fix it. Sometimes the fix can be as simple as telling the software to ignore the error.</p>
+<p><img alt="Placeholder" src="../images/model-errors.png" /></p>
+<h2 id="model-assets">Model Assets</h2>
+<p>List of all the assets in your model, including "inferred assets" which are automatically added by the software (and which are enclosed in square brackets).</p>
+<p><img alt="Placeholder" src="../images/image (53).png" /></p>
+<h2 id="model-controls">Model Controls</h2>
+<p>Lists the relevant security controls that SSM has identified for your system and allows you to apply them across multiple assets.</p>
+<p><img alt="Placeholder" src="../images/image (54).png" /></p>
+<h2 id="model-control-strategies">Model Control Strategies</h2>
+<p>Lists all the Control Strategies available to apply to the model and allows then to be explored and applied.</p>
+<p><img alt="Placeholder" src="../images/csgs.png" /></p>
+<h2 id="model-consequences-and-impacts">Model Consequences and Impacts</h2>
+<p>List of all the Consequences that SSM has identified as possible and the asset to which the Consequence relates. Consequence are caused by Threats.</p>
+<p>By drawing on the Domain Model containing a vast array of known Threats and Consequence, this provides a rating of the Impact of the Consequence on an organisation; the Likelihood of the Consequence occurring; and the calculated Risk level associated with a Consequence, ordered from Very High Risk to Negligible Risk.</p>
+<p><img alt="Placeholder" src="../images/image (55).png" /></p>
+<h2 id="model-threats">Model Threats</h2>
+<p>List of all the threats to your system that SSM has identified as possible and the asset to which the threat relates.</p>
+<p>Provides an assessment of the Likelihood of the misbehaviour occurring; and the calculated Risk level associated with a threat, ordered from Very High Risk to Very Low Risk.</p>
+<p>Also indicates whether the threat is a Primary threat (grey 1), a Root Cause (red 1), or a Secondary threat (grey 2) and whether the threat has been mitigated (faded out grey dash) or remains unmanaged (red exclamation mark).</p>
+<p><img alt="Placeholder" src="../images/image (56).png" /></p>
+<h2 id="model-compliance">Model Compliance</h2>
+<p>Lists the potential non-compliance with regulations such as GDPR that SSM has identified and the asset to which it relates.</p>
+<p><img alt="Placeholder" src="../images/image (57).png" /></p>
+<h2 id="asset-additional-properties">Asset Additional Properties</h2>
+<p>List of additional key/value pairs associated with an asset. This can be used to store arbitrary additional information about an asset, such as a host's IP address or hostname. The data is not currently used by the System Security Modeller but may be queried through the REST API to assist in integration with other systems.</p>
+<h2 id="asset-trustworthiness">Asset Trustworthiness</h2>
+<p>List of the Assumed and Calculated Trustworthiness levels for the asset and allows you to adjust the Assumed levels to accurately model your system as it is in the real world.</p>
+<p>Trustworthiness is an assessment of the extent to which an asset can be relied upon to behave correctly. Low trustworthiness increases the likelihood of Threats.</p>
+<p>The <em>Assumed</em> level is set by you (the risk analyst) to reflect your knowledge of the system and its environment (e.g. if an employee is using a very old laptop with an unsupported operating system you would lower the assumed trustworthiness for that asset to Very Low as it is highly likely to malfunction or be successfully hacked).</p>
+<p>The <em>Calculated</em> level is the result of the risk calculation and will be at most the <em>Assumed</em> level.</p>
+<p><img alt="Placeholder" src="../images/image (58).png" /></p>
+<h2 id="asset-inferred-assets">Asset Inferred Assets</h2>
+<p>List of all the inferred assets placed at the asset.</p>
+<p>SSM will automatically infer the existence of many additional assets, sometimes to save you the bother of adding them yourself, but many inferred assets represent complex assets such as data flows or network paths which the user cannot be expected to define.</p>
+<p><img alt="Placeholder" src="../images/image (59).png" /></p>
+<h2 id="asset-incoming-relations">Asset Incoming Relations</h2>
+<p>List of all the asserted and inferred incoming relationships for the asset (inferred entries have a tag icon).</p>
+<p>Where a relationship has a eye icon, it can be hidden by clicking on the icon.</p>
+<p><img alt="Placeholder" src="../images/image (60).png" /></p>
+<h2 id="asset-outgoing-relations">Asset Outgoing Relations</h2>
+<p>List of all the asserted and inferred outgoing relationships for the asset (inferred entries have a tag icon).</p>
+<p>Where a relationship has a eye icon, it can be hidden by clicking on the icon.</p>
+<p><img alt="Placeholder" src="../images/image (61).png" /></p>
+<h2 id="asset-controls">Asset Controls</h2>
+<p>List of all the controls applicable to the system and provides the status of those controls:</p>
+<ul>
+<li>Red    = not implemented</li>
+<li>Orange = planned to be implemented</li>
+<li>Green  = already implemented</li>
+</ul>
+<p><img alt="Placeholder" src="../images/image (62).png" /></p>
+<h2 id="asset-control-strategies">Asset Control Strategies</h2>
+<p>List of all the Control Strategies that include one or more Controls at the selected Asset. Clicking on a Control Strategy will open the relevant Control Strategy Explorer.</p>
+<p><img alt="Placeholder" src="../images/asset-csgs.png" /></p>
+<h2 id="asset-consequences-and-impact">Asset Consequences and Impact</h2>
+<p>List of all the Consequences that SSM has identified as possible for the asset. Consequences are caused by Threats.</p>
+<p>By drawing on the Domain Model containing a vast array of known threats and Consequences, this provides a rating of the Impact of the Consequences on an organisation; the Likelihood of the Consequences occurring; and the calculated Risk level associated with a Consequences, ordered from Very High Risk to Neglibigle Risk.</p>
+<p>The Impact level is set by you (the risk analyst) to reflect your knowledge of the system and the effect of the misbehaving asset on your organisation.</p>
+<p><img alt="Placeholder" src="../images/image (63).png" /></p>
+<h2 id="asset-threats">Asset Threats</h2>
+<p>List of all the threats to the asset that SSM has identified as possible.</p>
+<p>Provides an assessment of the Likelihood of the misbehaviour occurring; and the calculated Risk level associated with a threat, ordered from Very High Risk to Very Low Risk.</p>
+<p>Also indicates whether the threat is a Primary threat (grey 1), a Root Cause (red 1), or a Secondary threat (grey 2) and whether the threat has been mitigated (faded out grey dash) or remains unmanaged (red exclamation mark).</p>
+<p><img alt="Placeholder" src="../images/image (64).png" /></p>
+<h2 id="control-explorer">Control Explorer</h2>
+<p>Provides details of the selected Control and and other controls related to it.
+It also indicates which assets are applicable to this control and provides the status of the control in relation to each asset:</p>
+<ul>
+<li>Red    = not applied to the asset</li>
+<li>Orange = planned to be applied to the asset</li>
+<li>Green  = already applied to the asset</li>
+</ul>
+<p><img alt="Placeholder" src="../images/image (65).png" /></p>
+<h2 id="consequence-explorer">Consequence Explorer</h2>
+<p>Provides details of the Consequence including:</p>
+<ul>
+<li>a description of the Consequence</li>
+<li>the (asserted) Direct Impact and (calculated) Likelihood and Direct Risk levels (i.e. relating to this specific Asset)</li>
+<li>Root Causes: the highest likelihood root causes of the Consequence (a good place to start looking for where to add Controls)</li>
+<li>Direct Causes: the Threats that can directly cause the Consequence (i.e. one step before in the Threat path)</li>
+<li>Secondary Threats Caused or Primary Threats Enabled: the Threats that follow in the attack path</li>
+</ul>
+<p><img alt="Placeholder" src="../images/image (38).png" /></p>
+<h2 id="threat-explorer">Threat Explorer</h2>
+<p>Provides details of the Threat including:</p>
+<ul>
+<li>a description of the Threat with the calculated Likelihood and System Risk levels (describing the highest risk Consequence that this Threat causes)</li>
+<li>Details: technical information about the threat</li>
+<li>Direct Cause: the cause of the threat including asset Trustworthiness levels (the previous step in the attack path)</li>
+<li>Direct consequences: the Consequences directly resulting from the Threat</li>
+<li>Secondary consequences: all the Consequences resulting from the threat (further down the attack paths)</li>
+<li>Control Strategies: the list of Control Strategy alternatives which can be implemented to reduce the likelihood of the threat and the current status of the Controls within each Control Strategy (Red / Orange / Green)</li>
+</ul>
+<p><img alt="Placeholder" src="../images/image (40).png" /></p>
+<h2 id="compliance-explorer">Compliance Explorer</h2>
+<p>List of all the GDPR Compliance Issues (actual or potential) that could affect the system. GDPR Compliance affects the entire system (or a part of it), not a single asset.</p>
+<p>List of all the Possible Modelling Errors that there may be in the system, including details of the error (under Compliance Threat) and the asset affected by the error. <strong>All modelling errors MUST be resolved before the model can be completed and the risk analysis conducted.</strong></p>
+<p><img alt="Placeholder" src="../images/image (66).png" /></p>
+<h2 id="compliance-threat-explorer">Compliance Threat Explorer</h2>
+<p>Provides details on the GDPR Compliance Issues (actual or potential) that could affect the system, including:</p>
+<ul>
+<li>a description of the compliance issue</li>
+<li>Details: technical information about the issue</li>
+<li>Control Strategies: the list of controls which can be implemented to become more compliant with GDPR regulations and their current status (Red / Orange / Green)</li>
+<li>The relevant GDPR Articles that each control helps to address (for reference)</li>
+</ul>
+<p><img alt="Placeholder" src="../images/image (67).png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["instant", "navigation.expand"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
