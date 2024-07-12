@@ -1,0 +1,13 @@
+# systemd timer unit to run Spyderisk documentation tags service
+# Check the paths and values for your system, don't just copy blindly!
+
+[Unit]
+Description=Run Spyderisk documentation checker/updater
+Requires=spyderisk-docs-tags.systemd.service
+
+[Timer]
+Unit=spyderisk-docs-tags.systemd.service
+OnCalendar=*:0/30
+
+[Install]
+WantedBy=timers.target
