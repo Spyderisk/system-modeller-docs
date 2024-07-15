@@ -1,0 +1,13 @@
+# systemd service unit to run Spyderisk documentation tags script
+# Check the paths and values for your system, don't just copy blindly!
+
+[Unit]
+Description=Run Spyderisk documentation checker/updater
+Wants=spyderisk-docs-tags.systemd.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/check_new_tags.sh
+
+[Install]
+WantedBy=multi-user.target
