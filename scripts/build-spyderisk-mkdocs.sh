@@ -47,7 +47,8 @@ echo "Start Spyderisk docs build script"
 REPO_DIR="/var/spyderisk-docs"
 REPO_NAME="system-modeller-docs"
 TMP_NAME=$(mktemp /tmp/`basename $0`.XXXXX)
-OUTPUT_DIR="/var/spyderisk-docs/html"
+OUTPUT_DIR="/var/spyderisk-docs/www/html"
+OUTPUT_DIR="/code/www/html"
 
 ErrorExit() {
 	if [[ -f /tmp/$TMP_NAME/* ]]; then   # clean up mktemp output in /tmp
@@ -58,7 +59,8 @@ ErrorExit() {
 }
 
 if [[ $(id -u) -eq 0 ]]; then
-	ErrorExit "Do not run as root!"
+    #ErrorExit "Do not run as root!"
+    echo "WARN do not run as root"
 fi
 
 # Check hard coded place for git instead of using the path
@@ -73,18 +75,21 @@ if [[ ! -f $MKDOCS ]]; then
 fi
 
 if [[ ! -d $REPO_DIR ]]; then
-	ErrorExit "Top level $REPO_DIR does not exist: did you set it correctly in the script?"
+    mkdir -p $REPO_DIR
+    #ErrorExit "Top level $REPO_DIR does not exist: did you set it correctly in the script?"
 else
 	echo "write test" > $REPO_DIR/write_test
 	if [[ ! $? ]]; then
 		ErrorExit "Top level $REPO_DIR exists but is not writable"
+        else
+                rm $REPO_DIR/write_test
 	fi
 fi
 
 cd $REPO_DIR
 
 if [ -d "$REPO_DIR/$REPO_NAME" ]; then
-    rm -rf $REPO_DIR
+    rm -rf $REPO_NAME
 fi
 
 if [ -d "$REPO_DIR/$OUTPUT_DIR" ]; then
@@ -94,18 +99,25 @@ fi
 
 $GIT clone https://github.com/Spyderisk/$REPO_NAME.git || ErrorExit "Git clone failed"
 $GIT config --global --add safe.directory $REPO_DIR/$REPO_NAME
-cd $REPO_DIR/$REPO_NAME
-$TAGS=$($GIT tag 2>&1)
+cd $REPO_NAME
+TAGS=$($GIT tag 2>&1)
 
 # Compare the tags and detect new ones
-for i in $TAGS do
+for i in $TAGS; do
 
-    if [[ $i =~ ^v[0-9]\.[0-9]\.[0-9]$ ]]; then
-	    cd $REPO_DIR/$REPO_NAME
-	    git checkout $i
-	    mkdir $REPO_DIR/$OUTPUT_DIR/$i
-	    $MKDOCS build -d $REPO_DIR/$OUTPUT_DIR/$i
+    if [[ $i =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+	    git checkout  # $i
+	    mkdir -p $OUTPUT_DIR/$i
+	    $MKDOCS build -d /$OUTPUT_DIR/$i
 	    echo "Built Spyderisk docs for version $i"
+
+        cd /code/www/html
+        if [ -L latest ]; then
+            rm latest
+        fi
+        ln -s "$i" latest
+        cd "$REPO_DIR"
+
     fi
 
 done
