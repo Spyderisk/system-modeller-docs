@@ -11,4 +11,4 @@ services:
         target: /code/
     ports:
       - ${MKDOCS_PORT:-8000}:8000
-    entrypoint: /code/serve.sh
+    entrypoint: /code/scripts/serve.sh
