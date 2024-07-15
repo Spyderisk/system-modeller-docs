@@ -3,7 +3,7 @@ services:
   proxy:
     image: nginx:stable-alpine3.17
     ports:
-      - ${PROXY_EXTERNAL_PORT:-8089}:80
+      - ${PROXY_EXTERNAL_PORT:-8000}:80
     expose:
       - 80
     restart: on-failure
