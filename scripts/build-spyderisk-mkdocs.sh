@@ -101,7 +101,7 @@ $GIT clone https://github.com/Spyderisk/$REPO_NAME.git || ErrorExit "Git clone f
 $GIT config --global --add safe.directory $REPO_DIR/$REPO_NAME
 cd $REPO_NAME
 TAGS=$($GIT tag 2>&1)
-TAGS="v3.7.8"
+#TAGS="v3.7.8"
 
 # Compare the tags and detect new ones
 for i in $TAGS; do
