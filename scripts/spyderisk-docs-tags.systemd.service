@@ -7,7 +7,7 @@ Wants=spyderisk-docs-tags.systemd.timer
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/check_new_tags.sh
+ExecStart=/usr/local/bin/build-spyderisk-mkdocs.sh
 
 [Install]
 WantedBy=multi-user.target

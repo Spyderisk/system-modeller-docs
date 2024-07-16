@@ -92,13 +92,13 @@ if [ -d "$REPO_DIR/$REPO_NAME" ]; then
     rm -rf $REPO_NAME
 fi
 
-if [ -d "$REPO_DIR/$OUTPUT_DIR" ]; then
-    rm -rf $OUTPUT_DIR
+if [ -d "$OUTPUT_DIR" ]; then
+    find $OUTPUT_DIR -mindepth 1 -not -name 'index.html' -delete
 fi
-
 
 $GIT clone https://github.com/Spyderisk/$REPO_NAME.git || ErrorExit "Git clone failed"
 $GIT config --global --add safe.directory $REPO_DIR/$REPO_NAME
+
 cd $REPO_NAME
 TAGS=$($GIT tag 2>&1)
 #TAGS="v3.7.8"
@@ -107,18 +107,18 @@ TAGS=$($GIT tag 2>&1)
 for i in $TAGS; do
 
     if [[ $i =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-	    git checkout  # $i
-	    mkdir -p $OUTPUT_DIR/$i
-	    $MKDOCS build -d /$OUTPUT_DIR/$i
-	    echo "Built Spyderisk docs for version $i"
+        git checkout  # $i
+        mkdir -p $OUTPUT_DIR/$i
+        $MKDOCS build -d /$OUTPUT_DIR/$i
+        echo "Built Spyderisk docs for version $i"
 
-        cd /code/www/html
-        if [ -L latest ]; then
-            rm latest
-        fi
-        ln -s "$i" latest
-        cd "$REPO_DIR"
-
+        (
+            cd $OUTPUT_DIR
+            if [ -L latest ]; then
+                rm latest
+            fi
+            ln -s "$i" latest
+        )
     fi
 
 done
