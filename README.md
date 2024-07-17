@@ -1,18 +1,25 @@
 # system-modeller-docs
 
-This repository contains the Spyderisk System Modeller user documentation source files along with the necessary tools to build the documentation website.
+This repository contains the Spyderisk System Modeller user documentation
+source files along with the necessary tools to build the documentation website.
 
 ## Development Using Docker
 
 ### Pre-requisites
 
-You need `docker` and `docker-compose` installed. For Windows users, that means installing Docker Desktop.
+You need Linux, with `docker` and `docker-compose` installed.
+
+Note: Windows is not supported, eg with Docker Desktop.
 
 ### Development
 
-From the top-level folder of the repository, run `docker-compose up`. This will build the documentation and serve it on `http://localhost:8000`. If a port other than 8000 is required then set the environment variable `MKDOCS_PORT` to the desired port before executing `docker-compose up`.
+From the top-level folder of the repository, run `docker-compose up`. This will
+build the documentation and serve it on `http://localhost:8000`. If a port
+other than 8000 is required then set the environment variable `MKDOCS_PORT` to
+the desired port before executing `docker-compose up`.
 
-Edit the Markdown files in the `docs` folder. When you save a file, the output files in `site` will be updated and the web browser will refresh as necessary.
+Edit the Markdown files in the `docs` folder. When you save a file, the output
+files in `site` will be updated and the web browser will refresh as necessary.
 
 ## Contributors
 
