@@ -106,8 +106,8 @@ TAGS=$($GIT tag 2>&1)
 # Compare the tags and detect new ones
 for i in $TAGS; do
 
-    if [[ $i =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-        git checkout  # $i
+    if [[ $i =~ ^v[0-9]+\.[0-9]+\.[0-9]+-testing$ ]]; then
+        git checkout $i
         mkdir -p $OUTPUT_DIR/$i
         $MKDOCS build -d /$OUTPUT_DIR/$i
         echo "Built Spyderisk docs for version $i"
