@@ -1,4 +1,4 @@
-# Overview (v.3.5.0-testing)
+# Overview
 
 *Welcome to the Spyderisk System Modeller Documentation*
 

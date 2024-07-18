@@ -92,39 +92,38 @@ if [ -d "$REPO_DIR/$REPO_NAME" ]; then
     rm -rf $REPO_NAME
 fi
 
-if [ -d "$OUTPUT_DIR" ]; then
-    find $OUTPUT_DIR -mindepth 1 -not -name 'index.html' -delete
-fi
+#if [ -d "$OUTPUT_DIR" ]; then
+#    find $OUTPUT_DIR -mindepth 1 -not -name 'index.html' -delete
+#fi
 
 $GIT clone https://github.com/Spyderisk/$REPO_NAME.git || ErrorExit "Git clone failed"
 $GIT config --global --add safe.directory $REPO_DIR/$REPO_NAME
 
 cd $REPO_NAME
 TAGS=$($GIT tag 2>&1)
-#TAGS="v3.7.8"
 
 # Compare the tags and detect new ones
 for i in $TAGS; do
 
-    if [[ $i =~ ^v[0-9]+\.[0-9]+\.[0-9]+-testing$ ]]; then
-        git checkout $i
-        mkdir -p $OUTPUT_DIR/$i
-        $MKDOCS build -d /$OUTPUT_DIR/$i
-        echo "Built Spyderisk docs for version $i"
+    if [[ $i =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+        if [[ ! -d "$OUTPUT_DIR/$i" ]]; then
+            git checkout "$i"
+            mkdir -p "$OUTPUT_DIR/$i"
+            $MKDOCS build -d $OUTPUT_DIR/$i
+            echo "Built Spyderisk docs for version $i"
 
-        (
-            cd $OUTPUT_DIR
-            if [ -L latest ]; then
-                rm latest
-            fi
-            ln -s "$i" latest
-        )
+            (
+                cd "$OUTPUT_DIR" || exit 1
+                if [ -L latest ]; then
+                    rm latest
+                fi
+                ln -s "$i" latest
+            )
+        else
+            echo "skipping release $i"
+        fi
     fi
 
 done
-
-echo "Spyderisk docs built for versions $TAGS"
-
-# insert code herex to move each $i from $REPO_DIR/$OUTPUT_DIR/$i to websever dir
 
 echo "End Spyderisk docs build script"
