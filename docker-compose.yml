@@ -1,14 +1,32 @@
-version: '3.5'
-
+version: '3.7'
 services:
-  mkdocs:
-    build:
-      context: ./
-      dockerfile: Dockerfile
+  proxy:
+    image: nginx:stable-alpine3.17
+    ports:
+      - ${PROXY_EXTERNAL_PORT:-8000}:80
+    expose:
+      - 80
+    restart: on-failure
+    depends_on:
+      - documentation
+    entrypoint: /tmp/import/entrypoint.sh
     volumes:
       - type: bind
-        source: ./
-        target: /code/
-    ports:
-      - ${MKDOCS_PORT:-8000}:8000
-    entrypoint: /code/scripts/serve.sh
+        source: ./provisioning/nginx
+        target: /tmp/import
+      - type: bind
+        source: ./www
+        target: /var/www
+    networks:
+      - ssm_documentation_net
+
+  documentation:
+    build: .
+    container_name: ssm-documentation
+    volumes:
+      - ./:/code
+    networks:
+      - ssm_documentation_net
+
+networks:
+  ssm_documentation_net:

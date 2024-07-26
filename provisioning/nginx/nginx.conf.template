@@ -1,0 +1,65 @@
+
+user  nginx;
+worker_processes  auto;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+#root /tmp/www/html;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_host"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+
+    server {
+        listen 80;
+        absolute_redirect off;
+
+        location = / {
+            alias /var/www/html/;
+            index index.html;
+            try_files /index.html =404;
+        }
+
+        # For each endpoint, we are explicit about how to treat URLs without a trailing slash. Not doing this causes some hidden problems.
+        # $scheme and $http_host come from the request URL and are e.g. "https" and "some.domain:port". They are needed to preserve this part of the URL.
+
+        location /webhook/ {
+            client_max_body_size 100M;
+            proxy_pass http://documentation:8000/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_read_timeout 300s;
+            proxy_connect_timeout 300s;
+            proxy_send_timeout 300s;
+        }
+
+        location /system-modeller/ {
+            alias /var/www/html/;
+            index index.html;
+            try_files $uri $uri/ /latest/index.html;
+        }
+
+        #location / {
+        #    root /var/www/html;
+        #    index index.html;
+        #}
+
+    }
+}

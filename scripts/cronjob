@@ -4,4 +4,5 @@
 
 # Run the script every 30 minutes
 
-*/30 * * * * /usr/local/bin/check_new_tags.sh
+#*/30 * * * * /usr/local/bin/build-spyderisk-mkdocs.sh
+*/30 * * * * /code/scripts/build-spyderisk-mkdocs.sh
