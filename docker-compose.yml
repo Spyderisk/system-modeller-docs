@@ -30,4 +30,3 @@ services:
 
 networks:
   ssm_documentation_net:
-

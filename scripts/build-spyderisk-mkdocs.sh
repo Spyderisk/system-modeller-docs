@@ -126,4 +126,6 @@ for i in $TAGS; do
 
 done
 
+echo "Spyderisk docs built for versions $TAGS"
+
 echo "End Spyderisk docs build script"
